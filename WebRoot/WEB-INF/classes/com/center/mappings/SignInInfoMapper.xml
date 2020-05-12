@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.center.dao.SignInDao" >
+  <resultMap id="BaseResultMap" type="com.center.beans.SignInBean" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_phone" property="user_phone" jdbcType="VARCHAR" />
+    <result column="sign_in_time" property="sign_in_time" />
+  </resultMap>
+  
+  
+
+
+	<select id="selectLastOne" resultMap="BaseResultMap" >
+    select * from sign_in order by id desc limit 1
+   </select>
+  
+  <select id="select" resultMap="BaseResultMap" >
+    select * from sign_in 
+   </select>
+  
+  
+   <select id="selectByPhone" resultMap="BaseResultMap"  parameterType="String">
+    select * from sign_in where user_phone=#{phone}
+   </select>
+  
+  <select id="selectCerntainDayCertainUserSignInfo" resultMap="BaseResultMap" >
+    select * from sign_in where user_phone=#{phone,jdbcType=VARCHAR} and sign_in_time between #{time1,jdbcType=DATE} and #{time2,jdbcType=DATE}     
+   </select>
+  
+  <insert id="insertOneSignInfo"  parameterType="SignInBean">
+    insert into sign_in values(#{id},#{user_phone},#{sign_in_time})
+   </insert>
+  
+	
+</mapper>

@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/views/signPage.jsp=UTF-8
+encoding//WebRoot/javascripts/mine/search.js=UTF-8
+encoding//WebRoot/javascripts/mine/signPage.js=UTF-8
+encoding//src/com/center/controllers/ApplyMainController.java=UTF-8
+encoding//src/jdbc.properties=UTF-8
+encoding//src/log4j.properties=UTF-8
+encoding/<project>=UTF-8
+separateDerivedEncodings=true

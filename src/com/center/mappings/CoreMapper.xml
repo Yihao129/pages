@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.center.dao.CoreDao" >
+  <resultMap id="BaseResultMap" type="com.center.beans.CoreBean" >
+    <result column="word" property="word" jdbcType="VARCHAR" />
+    <result column="info" property="info" jdbcType="VARCHAR" />
+    <result column="author" property="author" jdbcType="VARCHAR" />
+    <result column="time" property="time" />
+    <result column="content_type" property="content_type" jdbcType="INTEGER" />
+  </resultMap>
+  
+  
+  <insert id="insert"  parameterType="CoreBean">
+    insert into core values(#{word},#{info},#{time},#{content_type},#{author})
+   </insert>
+   
+
+	<select id="selectByWord" resultMap="BaseResultMap" parameterType="String">
+	    select * from core where word=#{word}
+	</select>
+  
+
+  
+	
+</mapper>
